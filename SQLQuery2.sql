@@ -16,11 +16,13 @@ Email varchar(30)
 
 --------UC3----------
 -------Inserting values into a table--------
-INSERT INTO Address_Book VALUES('Arjun','Singh','Bengaluru','Karnataka','560085','845784','arjun@gmail.com');
-INSERT INTO Address_Book VALUES('Raj','Rajkumar','Mysore','Karnataka','560085','454645','raj@gmail.com');
-INSERT INTO Address_Book VALUES('Ramesh','Star','Goa','Goa','8375','763784','rrr@gmail.com');
-INSERT INTO Address_Book VALUES('Suresh','Sharma','Kolkatta','Bengal','574895','09384903','suresh@gmail.com');
-INSERT INTO Address_Book VALUES('PRaveen','Sharma','Bengaluru','Karnataka','455454','09384903','praveen@gmail.com');
+INSERT INTO Address_Book VALUES
+('Arjun','Singh','Bengaluru','Karnataka','560085','845784','arjun@gmail.com'),
+('PRaveen','Sharma','Bengaluru','Karnataka','455454','09384903','praveen@gmail.com'),
+('Raj','Rajkumar','Mysore','Karnataka','560085','454645','raj@gmail.com'),
+('Ramesh','Star','Goa','Goa','8375','763784','rrr@gmail.com'),
+('Suresh','Sharma','Kolkatta','Bengal','574895','09384903','suresh@gmail.com');
+
 SELECT * FROM Address_Book;
 
 -------------UC4---------
@@ -33,16 +35,16 @@ DELETE FROM Address_Book WHERE FirstName= 'Suresh';
 
 -----------------UC6---------
 ----Retrieving Data by City or State-----
-Select * from Address_Book WHERE City='Bengaluru';
-Select * from Address_Book WHERE StateName='Karnataka';
+Select * from Address_Book WHERE City='Bengaluru' OR StateName='Karnataka';
+
 
 ------------UC7-----------
 -----Size of Address book by City or State--------
-Select COUNT(City) as City_Count FROM Address_Book;
-Select COUNT(StateName) as State_Count FROM Address_Book;
+Select COUNT(City) as City_Count, COUNT(StateName) as State_Count FROM Address_Book;
+
 
 ------------UC8--------
 -----Sorting data------
-SELECT * FROM Address_Book ORDER BY(FirstName);
+SELECT * FROM Address_Book ORDER BY FirstName;
 
 --------UC9------------
